@@ -24,15 +24,14 @@ public class PrefixMatches {
             return 0;
         }
         for (int i = 0; i < strings.length; i++) {
-            if (strings[i] == null) {
-                continue;
-            }
-            for (String word : strings[i].split(" ")) {
-                int wordLength = word.length();
-                if (wordLength > L && !this.trie.contains(word)) {
-                    Tuple toAdd = new Tuple(word, wordLength);
-                    this.trie.add(toAdd);
-                    count = count + 1;
+            if (!(strings[i] == null)){
+                for (String word : strings[i].split(" ")) {
+                    int wordLength = word.length();
+                    if (wordLength > L && !this.trie.contains(word)) {
+                        Tuple toAdd = new Tuple(word, wordLength);
+                        this.trie.add(toAdd);
+                        count = count + 1;
+                    }
                 }
             }
 
