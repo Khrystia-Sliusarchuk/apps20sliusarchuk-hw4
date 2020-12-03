@@ -3,7 +3,7 @@ package ua.edu.ucu.tries;
 import java.util.Collections;
 
 public class RWayTrie implements Trie {
-    private static int R = 256;
+    static final int R = 256;
     private Node root = new Node();
     private int length;
 
@@ -24,8 +24,8 @@ public class RWayTrie implements Trie {
             return value;
         }
 
-        public Node setValue(int value) {
-            this.value = value;
+        public Node setValue(int val) {
+            this.value = val;
             return this;
         }
 
@@ -97,19 +97,20 @@ public class RWayTrie implements Trie {
         if (node == null) {
             return null;
         }
-        if (ind == key.length())
+        if (ind == key.length()) {
             node.setValue(-1);
-        else {
+        } else {
             char c = key.charAt(ind);
             node.next[c] = delete(node.next[c], key, ind + 1);
         }
         if (node.getValue() != -1) {
             return node;
         }
-        for (char c = 0; c < R; c++)
+        for (char c = 0; c < R; c++) {
             if (node.next[c] != null) {
                 return node;
             }
+        }
         return null;
     }
 

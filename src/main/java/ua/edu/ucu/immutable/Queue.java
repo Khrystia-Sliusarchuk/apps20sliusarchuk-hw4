@@ -21,7 +21,7 @@ public class Queue {
         queue = queue.addLast(e);
     }
 
-    public boolean Empty(){
+    public boolean empty() {
         return queue.isEmpty();
     }
 }
