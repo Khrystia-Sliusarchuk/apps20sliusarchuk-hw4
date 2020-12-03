@@ -64,8 +64,8 @@ public class PrefixMatches {
         }
         if (k < 0) {
             throw new IndexOutOfBoundsException(
-                    "The length of words you want to receive " +
-                            "should be more than 0!");
+                    "The length of words you want to receive "
+                            + "should be more than 0!");
         }
         if (k == 1) {
             return Collections::emptyIterator;
