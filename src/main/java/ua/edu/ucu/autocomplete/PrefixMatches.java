@@ -51,20 +51,21 @@ public class PrefixMatches {
 
     public Iterable<String> wordsWithPrefix(String pref) {
         if (pref.length() < 2) {
-            throw new IndexOutOfBoundsException
-                    ("The length of prefix should be more than 2!");
+            throw new IndexOutOfBoundsException(
+                    "The length of prefix should be more than 2!");
         }
         return this.trie.wordsWithPrefix(pref);
     }
 
     public Iterable<String> wordsWithPrefix(String pref, int k) {
         if (pref.length() < 2) {
-            throw new IndexOutOfBoundsException
-                    ("The length of prefix should be more than 2!");
+            throw new IndexOutOfBoundsException(
+                    "The length of prefix should be more than 2!");
         }
         if (k < 0) {
-            throw new IndexOutOfBoundsException
-                    ("The length of words you want to receive should be more than 0!");
+            throw new IndexOutOfBoundsException(
+                    "The length of words you want to receive " +
+                            "should be more than 0!");
         }
         if (k == 1) {
             return Collections::emptyIterator;
